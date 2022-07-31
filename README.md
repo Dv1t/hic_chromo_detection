@@ -1,4 +1,4 @@
-# Script for detection of chhromothripsic rearrangements in structural variations data
+# Script for detection of chhromothriptic rearrangements in structural variations data
 
 ---
 
