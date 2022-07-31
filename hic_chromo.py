@@ -12,13 +12,11 @@ def check_dict(d, item):
 
 def load_network(c, chr_number, patient, sv_filepath):
     chr_number = str(chr_number)
-    sv_master_table = pd.read_csv(sv_filepath, delimiter="\t")
+    sv_master_table = pd.read_csv(sv_filepath)
     sv = sv_master_table[(sv_master_table["chrom1"] == chr_number) &
                                          (sv_master_table["chrom2"] == chr_number) &
                                         (sv_master_table["unique_id"] == patient)]
-    sv = sv.drop(columns=['unique_id', 'sv_file_id', 'chrom2', 'chrom1',
-                                          'sv_id', 'pe_support', 'strand1', 'strand2', 'svclass',
-                                          'svmethod', 'chromo_label1', 'chromo_label2'])
+    sv = sv.drop(columns=['unique_id', 'chrom2', 'chrom1'])
     network_init = {}
     vertex_dict = {}
     break_set = set(sv.start1.unique())
@@ -103,7 +101,7 @@ def Wmake_graph(number_of_nodes, number_of_edges, least_density, network):
 
 def detect(resolution, hic_filepath, sv_filepath, out_filepath):
     c = CoolerExtendedArms(hic_filepath)
-    df = pd.read_csv(sv_filepath, delimiter="\t")
+    df = pd.read_csv(sv_filepath)
     patients_set = set(df.unique_id.unique())
     result = list()
     for patient in patients_set:
