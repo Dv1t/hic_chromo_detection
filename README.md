@@ -55,3 +55,9 @@ Output file is a table in .csv format. It consist from 24 columns.
 
 ## Example run and data
 Example structural variations data is available in `example-data` folder. Example .mcool file could be downloaded [here](https://disk.yandex.ru/d/adY1-p4Nfhgj9Q).
+
+## Citation
+
+If you use this tool in your research, please cite:
+
+Petukhova N., Zabelkin A., Dravgelis V., Aganezov S., Alexeev N. Chromothripsis Rearrangements Are Informed by 3D-Genome Organization. Lecture Notes in Computer Science. 2022. Vol. 13234. pp. 221-231. https://doi.org/10.1007/978-3-031-06220-9_13
